@@ -178,10 +178,9 @@ public class ChairBlock extends HorizontalDirectionalBlock implements SittingBlo
         } else {
             if (state.getValue(HALF) == DoubleBlockHalf.UPPER) {
                 return Blocks.AIR.defaultBlockState();
-            }
-            if (aboveState.is(this)) {
+            } else if (aboveState.is(this) && aboveState.getValue(HALF) == DoubleBlockHalf.UPPER) {
                 level.setBlockAndUpdate(pos.above(), Blocks.AIR.defaultBlockState());
-            } else {
+            } else if (aboveState.isAir()) {
                 level.setBlockAndUpdate(pos.above(), this.defaultBlockState().setValue(HALF, DoubleBlockHalf.UPPER).setValue(FACING, state.getValue(FACING)));
             }
         }
