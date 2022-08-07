@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "slices=1": {
+      "model": "cozy:block/pies/glow_berry/slice1"
+    },
+    "slices=2": {
+      "model": "cozy:block/pies/glow_berry/slice2"
+    },
+    "slices=3": {
+      "model": "cozy:block/pies/glow_berry/slice3"
+    },
+    "slices=4": {
+      "model": "cozy:block/pies/glow_berry/slice4"
+    }
+  }
+}

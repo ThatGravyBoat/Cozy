@@ -1,0 +1,11 @@
+{
+  "type": "cozy:cutting_board",
+  "uses": 2,
+  "input": {
+    "item": "minecraft:pumpkin"
+  },
+  "output": {
+    "id": "minecraft:pumpkin_seeds",
+    "count": 6
+  }
+}

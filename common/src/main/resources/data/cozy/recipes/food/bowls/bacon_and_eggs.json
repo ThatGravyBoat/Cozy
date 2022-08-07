@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "cozy:cooked_bacon"
+    },
+    {
+      "item": "cozy:cooked_egg"
+    }
+  ],
+  "result": {
+    "item": "cozy:bacon_and_eggs"
+  }
+}

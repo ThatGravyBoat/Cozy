@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "tech.thatgravyboat.cozy.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MobEffectInstanceAccessor",
+    "StructureProcessorListAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

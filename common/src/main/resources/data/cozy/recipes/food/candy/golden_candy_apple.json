@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:golden_apple"
+    },
+    {
+      "item": "minecraft:stick"
+    },
+    {
+      "item": "cozy:butterscotch"
+    }
+  ],
+  "result": {
+    "item": "cozy:golden_candy_apple"
+  }
+}

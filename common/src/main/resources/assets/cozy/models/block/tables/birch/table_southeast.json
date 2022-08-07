@@ -1,0 +1,6 @@
+{
+  "parent": "cozy:block/tables/base/southeast",
+  "textures": {
+    "texture": "cozy:block/tables/birch"
+  }
+}

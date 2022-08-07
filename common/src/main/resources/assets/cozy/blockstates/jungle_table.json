@@ -1,0 +1,45 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "cozy:block/tables/jungle/table_top"
+      }
+    },
+    {
+      "apply": {
+        "model": "cozy:block/tables/jungle/table_northwest"
+      },
+      "when": {
+        "north": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "cozy:block/tables/jungle/table_northeast"
+      },
+      "when": {
+        "north": "false",
+        "east": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "cozy:block/tables/jungle/table_southwest"
+      },
+      "when": {
+        "south": "false",
+        "west": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "cozy:block/tables/jungle/table_southeast"
+      },
+      "when": {
+        "south": "false",
+        "east": "false"
+      }
+    }
+  ]
+}

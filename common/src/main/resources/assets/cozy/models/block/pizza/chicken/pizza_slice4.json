@@ -1,0 +1,35 @@
+{
+	"textures": {
+		"texture": "cozy:block/pizza/cooked_chicken"
+	},
+	"elements": [
+		{
+			"from": [8, 1.003, 8],
+			"to": [14, 1.003, 14],
+			"faces": {
+				"up": {"uv": [8, 8, 2, 2], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [2, 1.003, 8],
+			"to": [8, 1.003, 14],
+			"faces": {
+				"up": {"uv": [14, 8, 8, 2], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [8, 1.003, 2],
+			"to": [14, 1.003, 8],
+			"faces": {
+				"up": {"uv": [8, 14, 2, 8], "texture": "#texture"}
+			}
+		},
+		{
+			"from": [2, 1.003, 2],
+			"to": [8, 1.003, 8],
+			"faces": {
+				"up": {"uv": [14, 14, 8, 8], "texture": "#texture"}
+			}
+		}
+	]
+}

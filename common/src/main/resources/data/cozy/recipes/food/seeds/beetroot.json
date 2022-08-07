@@ -1,0 +1,11 @@
+{
+  "type": "cozy:cutting_board",
+  "uses": 2,
+  "input": {
+    "item": "minecraft:beetroot"
+  },
+  "output": {
+    "id": "minecraft:beetroot_seeds",
+    "count": 3
+  }
+}

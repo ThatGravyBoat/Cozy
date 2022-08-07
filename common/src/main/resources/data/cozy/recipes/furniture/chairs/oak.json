@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "cozy_chairs",
+  "key": {
+    "A": {
+      "item": "minecraft:oak_planks"
+    },
+    "B": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "  A",
+    "AAA",
+    "B B"
+  ],
+  "result": {
+    "item": "cozy:oak_chair"
+  }
+}

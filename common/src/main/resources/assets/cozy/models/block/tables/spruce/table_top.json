@@ -1,0 +1,6 @@
+{
+  "parent": "cozy:block/tables/base/tabletop",
+  "textures": {
+    "texture": "cozy:block/tables/spruce"
+  }
+}

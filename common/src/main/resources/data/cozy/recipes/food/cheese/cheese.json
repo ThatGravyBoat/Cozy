@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "cozy:milk_bottle"
+  },
+  "result": "cozy:cheese"
+}

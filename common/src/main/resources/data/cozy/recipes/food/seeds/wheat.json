@@ -1,0 +1,11 @@
+{
+  "type": "cozy:cutting_board",
+  "uses": 2,
+  "input": {
+    "item": "minecraft:wheat"
+  },
+  "output": {
+    "id": "minecraft:wheat_seeds",
+    "count": 3
+  }
+}

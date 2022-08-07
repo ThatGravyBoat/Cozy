@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "cozy:block/chairs/oak/stool"
+    },
+    "half=upper,facing=north": {
+      "model": "cozy:block/chairs/oak/chair"
+    },
+    "half=upper,facing=east": {
+      "model": "cozy:block/chairs/oak/chair",
+      "y": 90
+    },
+    "half=upper,facing=south": {
+      "model": "cozy:block/chairs/oak/chair",
+      "y": 180
+    },
+    "half=upper,facing=west": {
+      "model": "cozy:block/chairs/oak/chair",
+      "y": 270
+    }
+  }
+}

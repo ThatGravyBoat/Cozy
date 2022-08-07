@@ -1,0 +1,8 @@
+{
+  "values": [
+    { "required": false, "id": "#cozy:chairs" },
+    { "required": false, "id": "#cozy:tables" },
+    { "required": false, "id": "#cozy:lamps" },
+    { "required": false, "id": "cozy:cutting_board" }
+  ]
+}

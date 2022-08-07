@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "cozy",
+  "version": "${version}",
+  "name": "Cozy",
+  "description": "Cozy is a mod that aims to add various foods, furniture, and quality of life additions to liven up your Minecraft world!",
+  "authors": [
+    "Dev - ThatGravyBoat",
+    "Artist - Frogipher"
+  ],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "tech.thatgravyboat.cozy.fabric.CozyFabric"
+    ],
+    "client": [
+      "tech.thatgravyboat.cozy.fabric.CozyFabricClient"
+    ],
+    "jei_mod_plugin": [
+      "tech.thatgravyboat.cozy.common.compat.jei.ModJeiPlugin"
+    ]
+  },
+  "mixins": [
+    "cozy.mixins.json",
+    "cozy-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.8",
+    "minecraft": ">=1.19.1",
+    "resourcefullib": "*"
+  }
+}

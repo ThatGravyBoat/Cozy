@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cozy:butterscotch"
+    },
+    {
+      "item": "cozy:chocolate"
+    }
+  ],
+  "result": {
+    "item": "cozy:butterscotch_chocolate"
+  }
+}

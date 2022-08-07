@@ -1,0 +1,6 @@
+{
+  "parent": "cozy:block/pies/base/slice1",
+  "textures": {
+    "texture": "cozy:block/pies/sweet_berry"
+  }
+}

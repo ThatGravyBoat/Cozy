@@ -1,0 +1,38 @@
+{
+  "multipart": [
+    { "apply": { "model": "cozy:block/pizza/dough/pizza_slice1" }, "when": { "slices": "1" }},
+    { "apply": { "model": "cozy:block/pizza/dough/pizza_slice2" }, "when": { "slices": "2" }},
+    { "apply": { "model": "cozy:block/pizza/dough/pizza_slice3" }, "when": { "slices": "3" }},
+    { "apply": { "model": "cozy:block/pizza/dough/pizza_slice4" }, "when": { "slices": "4" }},
+
+    { "apply": { "model": "cozy:block/pizza/sauce/pizza_slice1" }, "when": { "sauce": "true", "slices": "1" }},
+    { "apply": { "model": "cozy:block/pizza/sauce/pizza_slice2" }, "when": { "sauce": "true", "slices": "2" }},
+    { "apply": { "model": "cozy:block/pizza/sauce/pizza_slice3" }, "when": { "sauce": "true", "slices": "3" }},
+    { "apply": { "model": "cozy:block/pizza/sauce/pizza_slice4" }, "when": { "sauce": "true", "slices": "4" }},
+
+    { "apply": { "model": "cozy:block/pizza/cheese/pizza_slice1" }, "when": { "cheese": "true", "slices": "1" }},
+    { "apply": { "model": "cozy:block/pizza/cheese/pizza_slice2" }, "when": { "cheese": "true", "slices": "2" }},
+    { "apply": { "model": "cozy:block/pizza/cheese/pizza_slice3" }, "when": { "cheese": "true", "slices": "3" }},
+    { "apply": { "model": "cozy:block/pizza/cheese/pizza_slice4" }, "when": { "cheese": "true", "slices": "4" }},
+
+    { "apply": { "model": "cozy:block/pizza/chicken/pizza_slice1" }, "when": { "chicken": "true", "slices": "1" }},
+    { "apply": { "model": "cozy:block/pizza/chicken/pizza_slice2" }, "when": { "chicken": "true", "slices": "2" }},
+    { "apply": { "model": "cozy:block/pizza/chicken/pizza_slice3" }, "when": { "chicken": "true", "slices": "3" }},
+    { "apply": { "model": "cozy:block/pizza/chicken/pizza_slice4" }, "when": { "chicken": "true", "slices": "4" }},
+
+    { "apply": { "model": "cozy:block/pizza/mushroom/pizza_slice1" }, "when": { "mushroom": "true", "slices": "1" }},
+    { "apply": { "model": "cozy:block/pizza/mushroom/pizza_slice2" }, "when": { "mushroom": "true", "slices": "2" }},
+    { "apply": { "model": "cozy:block/pizza/mushroom/pizza_slice3" }, "when": { "mushroom": "true", "slices": "3" }},
+    { "apply": { "model": "cozy:block/pizza/mushroom/pizza_slice4" }, "when": { "mushroom": "true", "slices": "4" }},
+
+    { "apply": { "model": "cozy:block/pizza/pepperoni/pizza_slice1" }, "when": { "pepperoni": "true", "slices": "1" }},
+    { "apply": { "model": "cozy:block/pizza/pepperoni/pizza_slice2" }, "when": { "pepperoni": "true", "slices": "2" }},
+    { "apply": { "model": "cozy:block/pizza/pepperoni/pizza_slice3" }, "when": { "pepperoni": "true", "slices": "3" }},
+    { "apply": { "model": "cozy:block/pizza/pepperoni/pizza_slice4" }, "when": { "pepperoni": "true", "slices": "4" }},
+
+    { "apply": { "model": "cozy:block/pizza/sausage/pizza_slice1" }, "when": { "sausage": "true", "slices": "1" }},
+    { "apply": { "model": "cozy:block/pizza/sausage/pizza_slice2" }, "when": { "sausage": "true", "slices": "2" }},
+    { "apply": { "model": "cozy:block/pizza/sausage/pizza_slice3" }, "when": { "sausage": "true", "slices": "3" }},
+    { "apply": { "model": "cozy:block/pizza/sausage/pizza_slice4" }, "when": { "sausage": "true", "slices": "4" }}
+  ]
+}

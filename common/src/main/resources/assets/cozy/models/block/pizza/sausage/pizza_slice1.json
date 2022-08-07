@@ -1,0 +1,14 @@
+{
+	"textures": {
+		"texture": "cozy:block/pizza/cooked_sausage"
+	},
+	"elements": [
+		{
+			"from": [8, 1.006, 8],
+			"to": [14, 1.006, 14],
+			"faces": {
+				"up": {"uv": [8, 8, 2, 2], "texture": "#texture"}
+			}
+		}
+	]
+}

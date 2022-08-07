@@ -1,0 +1,7 @@
+{
+  "type": "cozy:smelting_copy",
+  "ingredient": {
+    "item": "cozy:raw_pizza"
+  },
+  "result": "cozy:cooked_pizza"
+}

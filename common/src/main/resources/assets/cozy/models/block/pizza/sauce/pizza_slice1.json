@@ -1,0 +1,14 @@
+{
+	"textures": {
+		"texture": "cozy:block/pizza/cooked_tomato"
+	},
+	"elements": [
+		{
+			"from": [8, 1.001, 8],
+			"to": [14, 1.001, 14],
+			"faces": {
+				"up": {"uv": [8, 8, 2, 2], "texture": "#texture"}
+			}
+		}
+	]
+}

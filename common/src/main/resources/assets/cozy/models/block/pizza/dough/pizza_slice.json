@@ -1,0 +1,21 @@
+{
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "cozy:block/pizza/raw_pizza_dough_base",
+		"particle": "#1"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 1],
+			"to": [15, 1, 15],
+			"faces": {
+				"north": {"uv": [7, 0, 14, 0.5], "texture": "#1"},
+				"east": {"uv": [7, 0.25, 14, 0.75], "texture": "#1"},
+				"south": {"uv": [7, 1, 14, 1.5], "texture": "#1"},
+				"west": {"uv": [7, 1.5, 14, 2], "texture": "#1"},
+				"up": {"uv": [7, 7, 0, 0], "texture": "#1"},
+				"down": {"uv": [7, 7, 0, 14], "texture": "#1"}
+			}
+		}
+	]
+}

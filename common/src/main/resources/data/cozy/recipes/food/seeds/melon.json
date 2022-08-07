@@ -1,0 +1,11 @@
+{
+  "type": "cozy:cutting_board",
+  "uses": 2,
+  "input": {
+    "item": "minecraft:melon_slice"
+  },
+  "output": {
+    "id": "minecraft:melon_seeds",
+    "count": 3
+  }
+}

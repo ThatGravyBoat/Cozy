@@ -1,0 +1,12 @@
+{
+  "type": "cozy:cutting_board",
+  "uses": 3,
+  "copyNbt": true,
+  "input": {
+    "item": "cozy:cooked_pizza"
+  },
+  "output": {
+    "id": "cozy:pizza_slice",
+    "count": 4
+  }
+}

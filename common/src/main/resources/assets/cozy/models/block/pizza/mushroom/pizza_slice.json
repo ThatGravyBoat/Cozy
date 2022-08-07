@@ -1,0 +1,14 @@
+{
+	"textures": {
+		"texture": "cozy:block/pizza/raw_mushroom"
+	},
+	"elements": [
+		{
+			"from": [2, 1.005, 2],
+			"to": [14, 1.005, 14],
+			"faces": {
+				"up": {"uv": [14, 14, 2, 2], "texture": "#texture"}
+			}
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "cozy:block/chairs/mangrove/stool"
+    },
+    "half=upper,facing=north": {
+      "model": "cozy:block/chairs/mangrove/chair"
+    },
+    "half=upper,facing=east": {
+      "model": "cozy:block/chairs/mangrove/chair",
+      "y": 90
+    },
+    "half=upper,facing=south": {
+      "model": "cozy:block/chairs/mangrove/chair",
+      "y": 180
+    },
+    "half=upper,facing=west": {
+      "model": "cozy:block/chairs/mangrove/chair",
+      "y": 270
+    }
+  }
+}

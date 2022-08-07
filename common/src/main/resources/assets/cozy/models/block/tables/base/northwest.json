@@ -1,0 +1,22 @@
+{
+	"parent": "minecraft:block/cube_all",
+	"texture_size": [64, 64],
+	"textures": {
+		"particle": "#texture"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 1],
+			"to": [3, 12, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-8, 0, -8]},
+			"faces": {
+				"north": {"uv": [2.5, 0.5, 3, 3.5], "texture": "#texture"},
+				"east": {"uv": [2, 0.5, 2.5, 3.5], "texture": "#texture"},
+				"south": {"uv": [3.5, 0.5, 4, 3.5], "texture": "#texture"},
+				"west": {"uv": [3, 0.5, 3.5, 3.5], "texture": "#texture"},
+				"up": {"uv": [3, 0.5, 2.5, 0], "texture": "#texture"},
+				"down": {"uv": [3.5, 0, 3, 0.5], "texture": "#texture"}
+			}
+		}
+	]
+}

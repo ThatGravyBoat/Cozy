@@ -1,0 +1,6 @@
+{
+  "parent": "cozy:block/tables/base/northwest",
+  "textures": {
+    "texture": "cozy:block/tables/dark_oak"
+  }
+}

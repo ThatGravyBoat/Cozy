@@ -1,0 +1,31 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube_all",
+	"texture_size": [64, 64],
+	"textures": {
+		"texture": "cozy:block/chairs/crimson",
+		"particle": "#texture"
+	},
+	"elements": [
+		{
+			"from": [1, -6, 13],
+			"to": [15, 11, 15],
+			"faces": {
+				"north": {"uv": [0.5, 4.75, 4, 9], "texture": "#texture"},
+				"east": {"uv": [0, 4.75, 0.5, 9], "texture": "#texture"},
+				"south": {"uv": [4.5, 4.75, 8, 9], "texture": "#texture"},
+				"west": {"uv": [4, 4.75, 4.5, 9], "texture": "#texture"},
+				"up": {"uv": [4, 4.75, 0.5, 4.25], "texture": "#texture"},
+				"down": {"uv": [7.5, 4.25, 4, 4.75], "texture": "#texture"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "bone",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

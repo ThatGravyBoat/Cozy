@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "minecraft:sweet_berries"
+    },
+    "B": {
+      "item": "cozy:tomato"
+    },
+    "C": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "pattern": [
+    " B ",
+    "ACA",
+    " B "
+  ],
+  "result": {
+    "item": "cozy:tomato_sweet_berry_salad"
+  }
+}

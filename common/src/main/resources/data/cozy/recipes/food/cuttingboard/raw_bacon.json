@@ -1,0 +1,11 @@
+{
+  "type": "cozy:cutting_board",
+  "uses": 3,
+  "input": {
+    "item": "minecraft:porkchop"
+  },
+  "output": {
+    "id": "cozy:raw_bacon",
+    "count": 2
+  }
+}

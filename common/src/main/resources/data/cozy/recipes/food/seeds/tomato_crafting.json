@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cozy:tomato"
+    }
+  ],
+  "result": {
+    "item": "cozy:tomato_seeds",
+    "count": 1
+  }
+}

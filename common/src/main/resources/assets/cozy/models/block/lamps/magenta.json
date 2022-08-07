@@ -1,0 +1,6 @@
+{
+  "parent": "cozy:block/lamps/base",
+  "textures": {
+    "texture": "cozy:block/lamps/magenta"
+  }
+}

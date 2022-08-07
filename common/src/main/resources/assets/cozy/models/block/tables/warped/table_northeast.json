@@ -1,0 +1,6 @@
+{
+  "parent": "cozy:block/tables/base/northeast",
+  "textures": {
+    "texture": "cozy:block/tables/warped"
+  }
+}

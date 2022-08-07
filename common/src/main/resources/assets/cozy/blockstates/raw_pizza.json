@@ -1,0 +1,11 @@
+{
+  "multipart": [
+    { "apply": { "model": "cozy:block/pizza/dough/pizza_slice" } },
+    { "apply": { "model": "cozy:block/pizza/sauce/pizza_slice" }, "when": { "sauce": "true"}},
+    { "apply": { "model": "cozy:block/pizza/cheese/pizza_slice" }, "when": { "cheese": "true"}},
+    { "apply": { "model": "cozy:block/pizza/chicken/pizza_slice" }, "when": { "chicken": "true"}},
+    { "apply": { "model": "cozy:block/pizza/mushroom/pizza_slice" }, "when": { "mushroom": "true"}},
+    { "apply": { "model": "cozy:block/pizza/pepperoni/pizza_slice" }, "when": { "pepperoni": "true"}},
+    { "apply": { "model": "cozy:block/pizza/sausage/pizza_slice" }, "when": { "sausage": "true"}}
+  ]
+}
