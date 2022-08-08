@@ -23,6 +23,7 @@
       "tech.thatgravyboat.cozy.common.compat.jei.ModJeiPlugin"
     ]
   },
+  "accessWidener": "cozy.accesswidener",
   "mixins": [
     "cozy.mixins.json",
     "cozy-common.mixins.json"
