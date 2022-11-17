@@ -1,6 +1,7 @@
 package tech.thatgravyboat.cozy.fabric;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.model.ModelLoadingRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -19,6 +20,7 @@ public class CozyFabricClient implements ClientModInitializer {
         var register = new FabricClientRegister();
         CozyClient.registerBlockRenderers(register);
         CozyClient.registerEntityRenderers(register);
+        ModelLoadingRegistry.INSTANCE.registerModelProvider((manager, out) -> CozyClient.registerModel(out));
     }
 
     private static class FabricClientRegister implements CozyClientRegisterers {

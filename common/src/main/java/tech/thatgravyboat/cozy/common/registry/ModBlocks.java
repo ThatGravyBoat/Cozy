@@ -75,6 +75,7 @@ public class ModBlocks {
     //region Cutting Board
     public static final Supplier<CuttingBoardBlock> CUTTING_BOARD = registerBlock("cutting_board", () -> new CuttingBoardBlock(BlockBehaviour.Properties.of(Material.WOOD).strength(2F).sound(SoundType.WOOD)));
     public static final Supplier<BlockEntityType<CuttingBoardBlockEntity>> CUTTING_BOARD_ENTITY = registerBlockEntity("cutting_board", () -> createBlockEntityType(CuttingBoardBlockEntity::new, ModBlocks.CUTTING_BOARD.get()));
+    public static final Supplier<BlockEntityType<ChairBlockEntity>> CHAIR_ENTITY = registerBlockEntity("chair", () -> createBlockEntityType(ChairBlockEntity::new, ModBlocks.ACACIA_CHAIR.get(), ModBlocks.MANGROVE_CHAIR.get(), ModBlocks.BIRCH_CHAIR.get(), ModBlocks.DARK_OAK_CHAIR.get(), ModBlocks.JUNGLE_CHAIR.get(), ModBlocks.OAK_CHAIR.get(), ModBlocks.SPRUCE_CHAIR.get(), ModBlocks.CRIMSON_CHAIR.get(), ModBlocks.WARPED_CHAIR.get()));
     //endregion
 
     //region Pies

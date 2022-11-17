@@ -23,7 +23,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
 
-    modImplementation "com.teamresourceful.resourcefullib:resourcefullib-fabric-${rootProject.resourcefullib_version}"
+    include modApi("com.teamresourceful.resourcefullib:resourcefullib-fabric-$rootProject.resourcefullib_version")
     modImplementation "mezz.jei:jei-${minecraft_version}-fabric:${rootProject.jei_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }

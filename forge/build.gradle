@@ -30,7 +30,7 @@ configurations {
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.forge_version}"
 
-    modImplementation "com.teamresourceful.resourcefullib:resourcefullib-forge-${rootProject.resourcefullib_version}"
+    include modApi("com.teamresourceful.resourcefullib:resourcefullib-forge-$rootProject.resourcefullib_version")
     //modImplementation "mezz.jei:jei-${minecraft_version}-forge:${rootProject.jei_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }

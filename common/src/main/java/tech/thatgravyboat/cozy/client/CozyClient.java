@@ -2,11 +2,20 @@ package tech.thatgravyboat.cozy.client;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.block.BlockRenderDispatcher;
 import net.minecraft.client.renderer.entity.NoopRenderer;
+import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
+import org.apache.commons.lang3.NotImplementedException;
+import tech.thatgravyboat.cozy.Cozy;
+import tech.thatgravyboat.cozy.client.renderers.CushionRenderer;
 import tech.thatgravyboat.cozy.client.renderers.CuttingBoardRenderer;
 import tech.thatgravyboat.cozy.common.registry.ModBlocks;
 import tech.thatgravyboat.cozy.common.registry.ModEntities;
+
+import java.util.function.Consumer;
 
 public class CozyClient {
 
@@ -16,6 +25,7 @@ public class CozyClient {
 
     public static void registerBlockRenderers(CozyClientRegisterers registerer) {
         registerer.registerBlockEntity(ModBlocks.CUTTING_BOARD_ENTITY.get(), CuttingBoardRenderer::new);
+        registerer.registerBlockEntity(ModBlocks.CHAIR_ENTITY.get(), CushionRenderer::new);
     }
 
     public static void registerEntityRenderers(CozyClientRegisterers registerer) {
@@ -57,8 +67,19 @@ public class CozyClient {
         setRenderType(ModBlocks.TOMATO_CROP.get(), RenderType.cutout());
     }
 
+    public static void registerModel(Consumer<ResourceLocation> modelLoader) {
+        for (DyeColor value : DyeColor.values()) {
+            modelLoader.accept(new ResourceLocation(Cozy.MOD_ID, "block/cushion/" + value.getName()));
+        }
+    }
+
     @ExpectPlatform
     public static void setRenderType(Block block, RenderType type) {
-        throw new AssertionError();
+        throw new NotImplementedException();
+    }
+
+    @ExpectPlatform
+    public static BakedModel getModel(BlockRenderDispatcher dispatcher, ResourceLocation model) {
+        throw new NotImplementedException();
     }
 }

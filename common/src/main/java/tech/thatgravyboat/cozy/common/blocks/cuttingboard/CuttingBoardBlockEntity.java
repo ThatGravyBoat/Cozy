@@ -108,7 +108,7 @@ public class CuttingBoardBlockEntity extends BlockEntity {
         if (!item.isEmpty()) {
             tag.put("Item", item.save(new CompoundTag()));
         }
-        return super.getUpdateTag();
+        return tag;
     }
 
     @Nullable

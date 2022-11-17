@@ -8,6 +8,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import tech.thatgravyboat.cozy.Cozy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import tech.thatgravyboat.cozy.common.registry.ModComposables;
 import tech.thatgravyboat.cozy.common.registry.ModVillageCrops;
 import tech.thatgravyboat.cozy.common.registry.forge.ModBlocksImpl;
 import tech.thatgravyboat.cozy.common.registry.forge.ModEntitiesImpl;
@@ -35,6 +36,7 @@ public class CozyForge {
 
     public static void onCommonSetup(FMLCommonSetupEvent event) {
         PiePlacer.init();
+        ModComposables.init();
     }
 
     public static void onPlace(PlayerInteractEvent.RightClickBlock event) {

@@ -2,24 +2,28 @@ package tech.thatgravyboat.cozy.common.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
-import net.minecraft.world.level.block.state.properties.*;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -32,8 +36,10 @@ import tech.thatgravyboat.cozy.common.blocks.base.Hammerable;
 import tech.thatgravyboat.cozy.common.blocks.base.SittingBlock;
 import tech.thatgravyboat.cozy.common.items.CozyItemExtension;
 import tech.thatgravyboat.cozy.common.registry.ModItems;
+import tech.thatgravyboat.cozy.common.utils.WoolHelper;
 
-public class ChairBlock extends HorizontalDirectionalBlock implements SittingBlock, Hammerable, CozyItemExtension {
+@SuppressWarnings("deprecation")
+public class ChairBlock extends HorizontalDirectionalBlock implements SittingBlock, Hammerable, CozyItemExtension, EntityBlock {
 
     private static final VoxelShape BASE_LOWER_SHAPE = Shapes.join(box(1d, 7d, 1d, 15d, 10d, 15d), box(2d, 0d, 2d, 14d, 7d, 14d), BooleanOp.OR);
     private static final VoxelShape BASE_UPPER_SHAPE = Shapes.join(box(1d, -9d, 1d, 15d, -6d, 15d), box(2d, -16d, 2d, 14d, -9d, 14d), BooleanOp.OR);
@@ -135,7 +141,31 @@ public class ChairBlock extends HorizontalDirectionalBlock implements SittingBlo
     @Override
     public InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult result) {
         ItemStack stack = player.getItemInHand(hand);
-        if (!stack.is(ModItems.HAMMER.get()) && canSitOn(level, state.getValue(HALF) == DoubleBlockHalf.UPPER ? pos.below() : pos, player, state.getValue(FACING))) {
+        BlockPos chairBase = state.getValue(HALF) == DoubleBlockHalf.UPPER ? pos.below() : pos;
+        if (level.getBlockEntity(chairBase) instanceof ChairBlockEntity entity) {
+            DyeColor woolDye = WoolHelper.getDyeColor(stack.getItem());
+            if (woolDye != null && !entity.hasColor()) {
+                entity.setColor(woolDye);
+                entity.setChanged();
+                level.sendBlockUpdated(chairBase, state, state, Block.UPDATE_ALL);
+                return InteractionResult.sidedSuccess(level.isClientSide);
+            }
+            DyeColor dye = stack.getItem() instanceof DyeItem dyeItem ? dyeItem.getDyeColor() : null;
+            if (dye != null && entity.hasColor()) {
+                entity.setColor(dye);
+                entity.setChanged();
+                level.sendBlockUpdated(chairBase, state, state, Block.UPDATE_ALL);
+                return InteractionResult.sidedSuccess(level.isClientSide);
+            }
+            if (stack.is(Items.SHEARS) && entity.hasColor()) {
+                dropCushion(level, chairBase);
+                entity.setColor(null);
+                entity.setChanged();
+                level.sendBlockUpdated(chairBase, state, state, Block.UPDATE_ALL);
+                return InteractionResult.sidedSuccess(level.isClientSide);
+            }
+        }
+        if (!stack.is(ModItems.HAMMER.get()) && canSitOn(level, chairBase, player, state.getValue(FACING))) {
             return InteractionResult.SUCCESS;
         }
         return super.use(state, level, pos, player, hand, result);
@@ -185,5 +215,28 @@ public class ChairBlock extends HorizontalDirectionalBlock implements SittingBlo
             }
         }
         return state;
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(@NotNull BlockPos pos, @NotNull BlockState state) {
+        return state.getValue(HALF) == DoubleBlockHalf.LOWER ? new ChairBlockEntity(pos, state) : null;
+    }
+
+    @Override
+    public void onRemove(BlockState state, @NotNull Level level, @NotNull BlockPos pos, BlockState newState, boolean moving) {
+        if (!state.is(newState.getBlock())) {
+            dropCushion(level, pos);
+        }
+        super.onRemove(state, level, pos, newState, moving);
+    }
+
+    public void dropCushion(Level level, BlockPos pos) {
+        if (level.getBlockEntity(pos) instanceof ChairBlockEntity entity) {
+            if (entity.hasColor()) {
+                Block block = WoolHelper.getBlock(entity.getColor());
+                Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(block != null ? block : Blocks.WHITE_WOOL));
+            }
+        }
     }
 }
