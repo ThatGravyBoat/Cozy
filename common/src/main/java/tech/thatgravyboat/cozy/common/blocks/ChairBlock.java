@@ -24,7 +24,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
-import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -131,11 +130,6 @@ public class ChairBlock extends HorizontalDirectionalBlock implements SittingBlo
         super.playerDestroy(level, player, pos, Blocks.AIR.defaultBlockState(), blockEntity, stack);
     }
 
-    @Override
-    public PushReaction getPistonPushReaction(@NotNull BlockState state) {
-        return PushReaction.BLOCK;
-    }
-
     //endregion
 
     @Override
@@ -147,6 +141,7 @@ public class ChairBlock extends HorizontalDirectionalBlock implements SittingBlo
             if (woolDye != null && !entity.hasColor()) {
                 entity.setColor(woolDye);
                 entity.setChanged();
+                stack.shrink(1);
                 level.sendBlockUpdated(chairBase, state, state, Block.UPDATE_ALL);
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }
@@ -154,6 +149,7 @@ public class ChairBlock extends HorizontalDirectionalBlock implements SittingBlo
             if (dye != null && entity.hasColor()) {
                 entity.setColor(dye);
                 entity.setChanged();
+                stack.shrink(1);
                 level.sendBlockUpdated(chairBase, state, state, Block.UPDATE_ALL);
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }
@@ -190,7 +186,7 @@ public class ChairBlock extends HorizontalDirectionalBlock implements SittingBlo
     @Override
     public BlockState hammer(Player player, BlockPos pos, BlockState state) {
         boolean shifting = player.isShiftKeyDown();
-        Level level = player.level;
+        Level level = player.level();
         BlockState aboveState = level.getBlockState(pos.above());
         if (shifting) {
             boolean isUpper = state.getValue(HALF) == DoubleBlockHalf.UPPER;

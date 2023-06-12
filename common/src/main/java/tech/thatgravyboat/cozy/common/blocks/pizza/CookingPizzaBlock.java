@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tech.thatgravyboat.cozy.common.registry.ModBlocks;
@@ -41,7 +41,7 @@ public class CookingPizzaBlock extends PizzaBlock implements EntityBlock {
     }
 
     @Override
-    public List<ItemStack> getDrops(@NotNull BlockState state, LootContext.@NotNull Builder builder) {
+    public List<ItemStack> getDrops(@NotNull BlockState state, LootParams.@NotNull Builder builder) {
         return PizzaBlock.getReturnItems(state);
     }
 }

@@ -8,6 +8,8 @@
     "cozy:mangrove_table",
     "cozy:oak_table",
     "cozy:spruce_table",
-    "cozy:warped_table"
+    "cozy:warped_table",
+    "cozy:cherry_table",
+    "cozy:bamboo_table"
   ]
 }

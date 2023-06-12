@@ -2,7 +2,7 @@ package tech.thatgravyboat.cozy.common.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.BlockGetter;
@@ -28,7 +28,7 @@ public class ConnectingBlock extends Block {
     private static final VoxelShape SOUTHWEST_SHAPE = box(1d, 0d, 13d, 3d, 12d, 15d);
     private static final VoxelShape SOUTHEAST_SHAPE = box(13d, 0d, 13d, 15d, 12d, 15d);
 
-    public static final TagKey<Block> CONNECTING_BLOCK_TAG = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(Cozy.MOD_ID, "can_connect_to_table"));
+    public static final TagKey<Block> CONNECTING_BLOCK_TAG = TagKey.create(Registries.BLOCK, new ResourceLocation(Cozy.MOD_ID, "can_connect_to_table"));
 
     public static final BooleanProperty NORTH = BlockStateProperties.NORTH;
     public static final BooleanProperty EAST = BlockStateProperties.EAST;

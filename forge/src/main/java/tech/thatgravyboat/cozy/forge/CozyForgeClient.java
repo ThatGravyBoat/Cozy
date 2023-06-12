@@ -9,16 +9,12 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ModelEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import tech.thatgravyboat.cozy.Cozy;
 import tech.thatgravyboat.cozy.client.CozyClient;
 import tech.thatgravyboat.cozy.client.CozyClientRegisterers;
-import tech.thatgravyboat.cozy.common.registry.forge.ModBlocksImpl;
-import tech.thatgravyboat.cozy.common.registry.forge.ModItemsImpl;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = Cozy.MOD_ID, value = Dist.CLIENT)
 public class CozyForgeClient {

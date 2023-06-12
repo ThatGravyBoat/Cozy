@@ -1,0 +1,6 @@
+{
+  "parent": "cozy:block/tables/base/southwest",
+  "textures": {
+    "texture": "cozy:block/tables/cherry"
+  }
+}

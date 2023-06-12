@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -64,7 +65,7 @@ public class SittingEntity extends Entity {
     @Override
     public void tick() {
         super.tick();
-        if (!level.isClientSide() && !(this.level.getBlockState(this.sittingPosition).getBlock() instanceof SittingBlock)) {
+        if (!level().isClientSide() && !(this.level().getBlockState(this.sittingPosition).getBlock() instanceof SittingBlock)) {
             CURRENTLY_SITTING.remove(this.sittingPosition);
             this.discard();
         }
@@ -89,7 +90,7 @@ public class SittingEntity extends Entity {
     //endregion
 
     @Override
-    public Packet<?> getAddEntityPacket() {
+    public Packet<ClientGamePacketListener> getAddEntityPacket() {
         return new ClientboundAddEntityPacket(this);
     }
 }

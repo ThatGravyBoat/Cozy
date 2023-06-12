@@ -1,6 +1,7 @@
 package tech.thatgravyboat.cozy.common.registry;
 
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.level.block.Blocks;
@@ -17,7 +18,7 @@ import java.util.List;
 public class ModVillageCrops {
 
     public static void addNewVillageCrop(MinecraftServer server) {
-        Registry<StructureProcessorList> registry = server.registryAccess().registry(Registry.PROCESSOR_LIST_REGISTRY).orElseThrow();
+        Registry<StructureProcessorList> registry = server.registryAccess().registry(Registries.PROCESSOR_LIST).orElseThrow();
 
         List<StructureProcessor> replacers = List.of(
             new RuleProcessor(List.of(new ProcessorRule(

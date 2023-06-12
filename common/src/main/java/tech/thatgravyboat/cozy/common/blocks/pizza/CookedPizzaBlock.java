@@ -11,13 +11,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import tech.thatgravyboat.cozy.common.registry.ModFoods;
-import tech.thatgravyboat.cozy.common.registry.ModItems;
 
 import java.util.List;
 
@@ -45,7 +44,7 @@ public class CookedPizzaBlock extends PizzaBlock {
     }
 
     @Override
-    public List<ItemStack> getDrops(@NotNull BlockState state, LootContext.@NotNull Builder builder) {
+    public List<ItemStack> getDrops(@NotNull BlockState state, LootParams.@NotNull Builder builder) {
         int value = state.getValue(SLICES);
         if (value == 4) {
             return List.of(PizzaBlock.createPizzaFromState(ModFoods.COOKED_PIZZA.get().getDefaultInstance(), state));

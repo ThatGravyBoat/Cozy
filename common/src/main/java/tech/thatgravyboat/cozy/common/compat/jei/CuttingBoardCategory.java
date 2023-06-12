@@ -10,8 +10,7 @@ import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -52,17 +51,15 @@ public class CuttingBoardCategory extends BaseCategory<CuttingBoardRecipe> {
     }
 
     @Override
-    public void draw(@NotNull CuttingBoardRecipe recipe, @NotNull IRecipeSlotsView view, @NotNull PoseStack stackIn, double mouseX, double mouseY) {
-        Minecraft minecraft = Minecraft.getInstance();
+    public void draw(@NotNull CuttingBoardRecipe recipe, @NotNull IRecipeSlotsView view, @NotNull GuiGraphics graphics, double mouseX, double mouseY) {
         PoseStack modelViewStack = RenderSystem.getModelViewStack();
         try (var stack = new CloseablePoseStack(modelViewStack)) {
-            modelViewStack.mulPoseMatrix(stackIn.last().pose());
+            modelViewStack.mulPoseMatrix(graphics.pose().last().pose());
             RenderSystem.enableDepthTest();
 
-            ItemRenderer itemRenderer = minecraft.getItemRenderer();
             stack.translate(22, 26, -50);
             stack.scale(2, 2, 1);
-            itemRenderer.renderAndDecorateFakeItem(CUTTING_BOARD, 0, 0);
+            graphics.renderItem(CUTTING_BOARD, 0, 0);
             RenderSystem.disableBlend();
         }
         RenderSystem.applyModelViewMatrix();
