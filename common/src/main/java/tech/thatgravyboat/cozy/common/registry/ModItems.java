@@ -4,8 +4,10 @@ import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistries;
 import com.teamresourceful.resourcefullib.common.registry.ResourcefulRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import tech.thatgravyboat.cozy.Cozy;
+import tech.thatgravyboat.cozy.common.blocks.globe.GlobeBlockItem;
 import tech.thatgravyboat.cozy.common.items.AttackDamageItem;
 import tech.thatgravyboat.cozy.common.items.HammerItem;
 
@@ -68,6 +70,8 @@ public class ModItems {
     public static final Supplier<Item> CUTTING_BOARD = DECO.register("cutting_board", () -> new BlockItem(ModBlocks.CUTTING_BOARD.get(), new Item.Properties()));
     //endregion
 
+    public static final Supplier<Item> GLOBE = DECO.register("globe", () -> new GlobeBlockItem(ModBlocks.GLOBE.get(), new Item.Properties()));
+    public static final Supplier<Item> FIREWOOD = DECO.register("firewood", () -> new BlockItem(ModBlocks.FIREWOOD.get(), new Item.Properties()));
     public static final Supplier<Item> HAMMER = ITEMS.register("hammer", () -> new HammerItem(new Item.Properties().durability(1000)));
 
 }

@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "logs=1,facing=north": {
+      "model": "cozy:block/firewood/one"
+    },
+    "logs=1,facing=south": {
+      "model": "cozy:block/firewood/one",
+      "y": 180
+    },
+    "logs=1,facing=east": {
+      "model": "cozy:block/firewood/one",
+        "y": 90
+    },
+    "logs=1,facing=west": {
+      "model": "cozy:block/firewood/one",
+        "y": 270
+    },
+    "logs=2,facing=north": {
+      "model": "cozy:block/firewood/two"
+    },
+    "logs=2,facing=south": {
+      "model": "cozy:block/firewood/two",
+      "y": 180
+    },
+    "logs=2,facing=east": {
+      "model": "cozy:block/firewood/two",
+        "y": 90
+    },
+    "logs=2,facing=west": {
+      "model": "cozy:block/firewood/two",
+        "y": 270
+    },
+    "logs=3,facing=north": {
+      "model": "cozy:block/firewood/three"
+    },
+    "logs=3,facing=south": {
+      "model": "cozy:block/firewood/three",
+      "y": 180
+    },
+    "logs=3,facing=east": {
+      "model": "cozy:block/firewood/three",
+        "y": 90
+    },
+    "logs=3,facing=west": {
+      "model": "cozy:block/firewood/three",
+        "y": 270
+    },
+    "logs=4,facing=north": {
+      "model": "cozy:block/firewood/four"
+    },
+    "logs=4,facing=south": {
+      "model": "cozy:block/firewood/four",
+      "y": 180
+    },
+    "logs=4,facing=east": {
+      "model": "cozy:block/firewood/four",
+        "y": 90
+    },
+    "logs=4,facing=west": {
+      "model": "cozy:block/firewood/four",
+        "y": 270
+    }
+  }
+}

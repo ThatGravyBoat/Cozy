@@ -8,9 +8,9 @@ import tech.thatgravyboat.cozy.common.entity.SittingEntity;
 
 public interface SittingBlock {
 
-    default boolean canSitOn(Level level, BlockPos pos, Player player, Direction direction) {
-        if (!SittingEntity.CURRENTLY_SITTING.containsKey(pos) && !level.isClientSide()) {
-            SittingEntity seat = SittingEntity.of(level, pos, direction);
+    default boolean canSitOn(Level level, BlockPos pos, Player player, Direction direction, boolean canRotate) {
+        if (!SittingEntity.getMap(level).contains(pos) && !level.isClientSide()) {
+            SittingEntity seat = SittingEntity.of(level, pos, direction, canRotate);
             level.addFreshEntity(seat);
             player.startRiding(seat);
             return true;

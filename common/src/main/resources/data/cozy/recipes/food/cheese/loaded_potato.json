@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "cozy:cheese"
+    },
+    {
+      "item": "minecraft:baked_potato"
+    },
+    {
+      "item": "cozy:cream"
+    },
+    {
+      "item": "cozy:cooked_bacon"
+    }
+  ],
+  "result": {
+    "item": "cozy:loaded_potato"
+  }
+}

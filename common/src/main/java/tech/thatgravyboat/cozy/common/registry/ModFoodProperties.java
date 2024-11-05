@@ -39,4 +39,12 @@ public class ModFoodProperties {
     public static final FoodProperties PEANUT_BUTTER = new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).build();
     public static final FoodProperties PBJ = new FoodProperties.Builder().nutrition(6).saturationMod(0.2F).build();
 
+    public static final FoodProperties CANDIED_BACON = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build();
+    public static final FoodProperties CAKE_SLICE = new FoodProperties.Builder().nutrition(2).saturationMod(0.1F).build();
+    public static final FoodProperties GLAZED_HAM = new FoodProperties.Builder().nutrition(12).saturationMod(0.6F).build();
+    public static final FoodProperties LOADED_POTATO = new FoodProperties.Builder().nutrition(5).saturationMod(0.4F).build();
+    public static final FoodProperties PUMPKIN_STEW = new FoodProperties.Builder().nutrition(7).saturationMod(0.6F).build();
+    public static final FoodProperties ROASTED_POTATOES = new FoodProperties.Builder().nutrition(9).saturationMod(0.5F).build();
+
+
 }

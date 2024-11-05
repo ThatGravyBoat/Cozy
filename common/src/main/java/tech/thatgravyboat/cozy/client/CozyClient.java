@@ -12,6 +12,7 @@ import org.apache.commons.lang3.NotImplementedException;
 import tech.thatgravyboat.cozy.Cozy;
 import tech.thatgravyboat.cozy.client.renderers.CushionRenderer;
 import tech.thatgravyboat.cozy.client.renderers.CuttingBoardRenderer;
+import tech.thatgravyboat.cozy.client.renderers.GlobeRenderer;
 import tech.thatgravyboat.cozy.common.registry.ModBlocks;
 import tech.thatgravyboat.cozy.common.registry.ModEntities;
 
@@ -26,6 +27,7 @@ public class CozyClient {
     public static void registerBlockRenderers(CozyClientRegisterers registerer) {
         registerer.registerBlockEntity(ModBlocks.CUTTING_BOARD_ENTITY.get(), CuttingBoardRenderer::new);
         registerer.registerBlockEntity(ModBlocks.CHAIR_ENTITY.get(), CushionRenderer::new);
+        registerer.registerBlockEntity(ModBlocks.GLOBE_ENTITY.get(), GlobeRenderer::new);
     }
 
     public static void registerEntityRenderers(CozyClientRegisterers registerer) {
@@ -67,6 +69,8 @@ public class CozyClient {
         setRenderType(ModBlocks.COOKED_PIZZA.get(), RenderType.cutout());
 
         setRenderType(ModBlocks.TOMATO_CROP.get(), RenderType.cutout());
+
+        setRenderType(ModBlocks.GLOBE.get(), RenderType.cutout());
     }
 
     public static void registerModel(Consumer<ResourceLocation> modelLoader) {

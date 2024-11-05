@@ -19,6 +19,8 @@ import tech.thatgravyboat.cozy.Cozy;
 import tech.thatgravyboat.cozy.common.blocks.*;
 import tech.thatgravyboat.cozy.common.blocks.cuttingboard.CuttingBoardBlock;
 import tech.thatgravyboat.cozy.common.blocks.cuttingboard.CuttingBoardBlockEntity;
+import tech.thatgravyboat.cozy.common.blocks.globe.GlobeBlock;
+import tech.thatgravyboat.cozy.common.blocks.globe.GlobeBlockEntity;
 import tech.thatgravyboat.cozy.common.blocks.pizza.*;
 
 import java.util.function.Supplier;
@@ -86,10 +88,16 @@ public class ModBlocks {
 
     //endregion
 
-    //region Cutting Board
-    public static final Supplier<CuttingBoardBlock> CUTTING_BOARD = BLOCKS.register("cutting_board", () -> new CuttingBoardBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+    //region Misc
+    public static final Supplier<CuttingBoardBlock> CUTTING_BOARD = BLOCKS.register("cutting_board", () -> new CuttingBoardBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2F).sound(SoundType.WOOD)));//endregion
+    public static final Supplier<GlobeBlock> GLOBE = BLOCKS.register("globe", () -> new GlobeBlock(BlockBehaviour.Properties.of().strength(2F).sound(SoundType.GLASS)));
+    public static final Supplier<FirewoodBlock> FIREWOOD = BLOCKS.register("firewood", () -> new FirewoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(2F).sound(SoundType.WOOD).noOcclusion()));
+    //endregion
+
+    //region Block Entities
     public static final Supplier<BlockEntityType<CuttingBoardBlockEntity>> CUTTING_BOARD_ENTITY = BLOCK_ENTITIES.register("cutting_board", () -> createBlockEntityType(CuttingBoardBlockEntity::new, ModBlocks.CUTTING_BOARD.get()));
-    public static final Supplier<BlockEntityType<ChairBlockEntity>> CHAIR_ENTITY = BLOCK_ENTITIES.register("chair", () -> createBlockEntityType(ChairBlockEntity::new, ModBlocks.CHAIRS.boundStream().toArray(Block[]::new)));
+    public static final Supplier<BlockEntityType<ChairBlockEntity>> CHAIR_ENTITY = BLOCK_ENTITIES.register("chair", () -> createBlockEntityType(ChairBlockEntity::new, ModBlocks.ACACIA_CHAIR.get(), ModBlocks.MANGROVE_CHAIR.get(), ModBlocks.BIRCH_CHAIR.get(), ModBlocks.DARK_OAK_CHAIR.get(), ModBlocks.JUNGLE_CHAIR.get(), ModBlocks.OAK_CHAIR.get(), ModBlocks.SPRUCE_CHAIR.get(), ModBlocks.CRIMSON_CHAIR.get(), ModBlocks.WARPED_CHAIR.get()));
+    public static final Supplier<BlockEntityType<GlobeBlockEntity>> GLOBE_ENTITY = BLOCK_ENTITIES.register("globe", () -> createBlockEntityType(GlobeBlockEntity::new, ModBlocks.GLOBE.get()));
     //endregion
 
     //region Pies

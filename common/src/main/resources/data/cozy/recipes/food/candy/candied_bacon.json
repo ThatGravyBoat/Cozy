@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "cozy:cooked_bacon"
+    }
+  ],
+  "result": {
+    "item": "cozy:candied_bacon"
+  }
+}

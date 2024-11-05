@@ -1,12 +1,24 @@
 package tech.thatgravyboat.cozy.common.registry;
 
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.level.ItemLike;
 import org.apache.commons.lang3.NotImplementedException;
 
-public class ModComposables {
+public class ModVanillaRegistry {
 
     public static void init() {
+        initFuels();
+        ModFoods.FOODS.boundStream().forEach(item -> {
+            FoodProperties properties = item.getFoodProperties();
+            if (properties != null) {
+                float value = properties.getSaturationModifier();
+                if (value >= 0.1f) {
+                    register(value, item);
+                }
+            }
+        });
+
         register(0.3F, ModFoods.TOMATO_SEEDS.get());
         register(0.3F, ModFoods.TOMATO.get());
         register(0.3F, ModFoods.CHEESE.get());
@@ -23,8 +35,17 @@ public class ModComposables {
         register(1F, ModFoods.GLOWBERRY_PIE.get());
     }
 
+    private static void initFuels() {
+        registerFuel(1900, ModItems.FIREWOOD.get());
+    }
+
     @ExpectPlatform
     public static void register(float value, ItemLike... items) {
+        throw new NotImplementedException();
+    }
+
+    @ExpectPlatform
+    public static void registerFuel(int value, ItemLike... items) {
         throw new NotImplementedException();
     }
 }

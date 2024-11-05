@@ -37,6 +37,14 @@
   "block.cozy.dough": "Dough",
   "item.cozy.cream": "Cream",
   "block.cozy.tomato": "Tomato Seeds",
+  "block.cozy.globe": "Snow Globe",
+  "block.cozy.firewood": "Firewood",
+  "item.cozy.candied_bacon": "Canied Bacon",
+  "item.cozy.cake_slice": "Slice Of Cake",
+  "item.cozy.honey_glazed_ham": "Honey Glazed Ham",
+  "item.cozy.loaded_potato": "Loaded Potato",
+  "item.cozy.pumpkin_stew": "Pumpkin Stew",
+  "item.cozy.roasted_potatoes": "Roasted Potatoes",
 
   "block.cozy.acacia_table": "Acacia Table",
   "block.cozy.acacia_chair": "Acacia Chair",
@@ -89,5 +97,9 @@
   "block.cozy.pizza.tooltip.topping.sausage": " - Sausage",
 
   "gui.cozy.jei.cutting_board": "Cutting Board",
-  "gui.cozy.jei.cutting_board.chops": "Requires %s chops."
+  "gui.cozy.jei.cutting_board.chops": "Requires %s chops.",
+
+  "gui.cozy.item.globe.location": "Location: [%s]",
+  "gui.cozy.item.globe.not_safe": "Location is not safe to teleport to.",
+  "gui.cozy.item.globe.same_dim": "You must be in the same dimension as the position your globe is linked to."
 }

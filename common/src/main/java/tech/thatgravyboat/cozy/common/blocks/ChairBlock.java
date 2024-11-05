@@ -161,7 +161,8 @@ public class ChairBlock extends HorizontalDirectionalBlock implements SittingBlo
                 return InteractionResult.sidedSuccess(level.isClientSide);
             }
         }
-        if (!stack.is(ModItems.HAMMER.get()) && canSitOn(level, chairBase, player, state.getValue(FACING))) {
+        BlockState upper = level.getBlockState(chairBase.above());
+        if (!stack.is(ModItems.HAMMER.get()) && canSitOn(level, chairBase, player, state.getValue(FACING), !upper.hasProperty(HALF))) {
             return InteractionResult.SUCCESS;
         }
         return super.use(state, level, pos, player, hand, result);

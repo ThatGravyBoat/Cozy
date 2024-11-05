@@ -9,8 +9,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import tech.thatgravyboat.cozy.Cozy;
-import tech.thatgravyboat.cozy.common.registry.ModComposables;
+import tech.thatgravyboat.cozy.common.registry.ModVanillaRegistry;
 import tech.thatgravyboat.cozy.common.registry.ModVillageCrops;
+import tech.thatgravyboat.cozy.common.registry.forge.ModVanillaRegistryImpl;
 import tech.thatgravyboat.cozy.common.utils.PiePlacer;
 
 @Mod(Cozy.MOD_ID)
@@ -21,13 +22,14 @@ public class CozyForge {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.addListener(CozyForge::onPlace);
         MinecraftForge.EVENT_BUS.addListener(CozyForge::onServerStart);
+        MinecraftForge.EVENT_BUS.addListener(ModVanillaRegistryImpl::fuelBurnEvent);
         bus.addListener(CozyForge::onCommonSetup);
         bus.addListener(CozyForge::onCreativeModeTabs);
     }
 
     public static void onCommonSetup(FMLCommonSetupEvent event) {
         PiePlacer.init();
-        ModComposables.init();
+        ModVanillaRegistry.init();
     }
 
     public static void onPlace(PlayerInteractEvent.RightClickBlock event) {

@@ -64,6 +64,13 @@ public class ModFoods {
     public static final Supplier<Item> GLOWBERRY_JAM = FOODS.register("glow_berry_jam", () -> new ReturningFoodItem(UseAnim.DRINK, Items.GLASS_BOTTLE, normal(ModFoodProperties.GLOWBERRY_JAM)));
     public static final Supplier<Item> SWEET_BERRY_JAM = FOODS.register("sweet_berry_jam", () -> new ReturningFoodItem(UseAnim.DRINK, Items.GLASS_BOTTLE, normal(ModFoodProperties.SWEET_BERRY_JAM)));
 
+    public static final Supplier<Item> CANDIED_BACON = FOODS.register("candied_bacon", () -> new Item(normal(ModFoodProperties.CANDIED_BACON)));
+    public static final Supplier<Item> CAKE_SLICE = FOODS.register("cake_slice", () -> new Item(normal(ModFoodProperties.CAKE_SLICE)));
+    public static final Supplier<Item> HONEY_GLAZED_HAM = FOODS.register("honey_glazed_ham", () -> new Item(normal(ModFoodProperties.GLAZED_HAM)));
+    public static final Supplier<Item> LOADED_POTATO = FOODS.register("loaded_potato", () -> new Item(normal(ModFoodProperties.LOADED_POTATO)));
+    public static final Supplier<Item> PUMPKIN_STEW = FOODS.register("pumpkin_stew", () -> new BowlFoodItem(normal(ModFoodProperties.PUMPKIN_STEW)));
+    public static final Supplier<Item> ROASTED_POTATOES = FOODS.register("roasted_potatoes", () -> new Item(normal(ModFoodProperties.ROASTED_POTATOES)));
+
     static {
         if (ModInfoUtils.isModLoaded("sprout")) {
             FOODS.register("peanut_butter", () -> new ReturningFoodItem(UseAnim.DRINK, Items.GLASS_BOTTLE, normal(ModFoodProperties.PEANUT_BUTTER)));
